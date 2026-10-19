@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import org.example.project.models.MovieData
 import org.example.project.states.MovieState
+import kotlin.time.Duration.Companion.hours
 
 class MovieVM : ViewModel() {
     private val _uiState = MutableStateFlow(MovieState())
@@ -17,9 +18,9 @@ class MovieVM : ViewModel() {
 
     private fun loadInitialData() {
         val items = listOf(
-            MovieData("Campanilla", "Finca finquette", "Lechuga de agua", 44, true),
-            MovieData("", "Lejana Pradera", "Mango menta", 37, false),
-            MovieData(3, "Las Pozas de Marea", "Remolacha corazón", 46, false)
+            MovieData("Campanilla", "Fantasía", 1.3.hours),
+            MovieData("La Bella y la Bestia", "Animación", 1.25.hours),
+            MovieData("El Padrino", "Drama", 2.5.hours)
         )
 
         _uiState.update { currentState ->
