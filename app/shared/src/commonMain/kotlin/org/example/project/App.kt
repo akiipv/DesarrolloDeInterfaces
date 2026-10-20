@@ -29,8 +29,12 @@ fun App() {
         val viewModel: StudentVM = viewModel() { StudentVM() }
         StudentView(viewModel = viewModel) */
 
-        // Proyecto 4
+        /* Proyecto 4
         val viewModel: MovieVM = viewModel() { MovieVM() }
-        MovieView(viewModel = viewModel)
+        MovieView(viewModel = viewModel) */
+
+        // Proyecto 5
+        val viewModel: RecipeVM = viewModel() { RecipeVM() }
+        RecipeView(viewModel = viewModel)
     }
 }

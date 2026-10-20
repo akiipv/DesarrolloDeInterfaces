@@ -1,4 +1,7 @@
 package org.example.project.states
 
-class RecipeState {
-}
+import org.example.project.models.RecipeData
+
+data class RecipeState (
+    val recipies: List<RecipeData> = emptyList()
+)

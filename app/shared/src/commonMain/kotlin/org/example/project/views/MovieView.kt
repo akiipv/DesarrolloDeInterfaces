@@ -132,8 +132,8 @@ fun movieCard(item: MovieData) {
                 thickness = 2.dp
             )
             Spacer(modifier = Modifier.height(8.dp))
-            Text("· Duración﹕ ${item.duration}")
-            Text("· Género﹕ ${item.genre}")
+            Text("· Duration﹕ ${item.duration}")
+            Text("· Genre﹕ ${item.genre}")
         }
     }
 }
