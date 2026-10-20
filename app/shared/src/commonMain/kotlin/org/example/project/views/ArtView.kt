@@ -20,14 +20,16 @@ import org.example.project.viewModels.ArtVM
 fun ArtView(viewModel: ArtVM = viewModel()) {
     val (items, selectedItem) = viewModel.uiState.collectAsState().value
 
-    Column(modifier = Modifier
-        .fillMaxSize()
-        .padding(15.dp, 5.dp)
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(15.dp, 5.dp)
     ) {
-        LazyColumn(modifier = Modifier
-            .fillMaxWidth()
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxWidth()
         ) {
-           items(items) { item -> itemCard(item, onClick = { viewModel.selectItem(item) }) }
+            items(items) { item -> itemCard(item, onClick = { viewModel.selectItem(item) }) }
         }
     }
 
@@ -37,7 +39,7 @@ fun ArtView(viewModel: ArtVM = viewModel()) {
                 .fillMaxSize()
                 .background(color = Color.Black.copy(alpha = 0.2f)),
             contentAlignment = Alignment.Center
-        ){
+        ) {
             Card(
                 modifier = Modifier
                     .size(200.dp, 150.dp)
@@ -45,7 +47,8 @@ fun ArtView(viewModel: ArtVM = viewModel()) {
                 Text(
                     text = item.title,
                     modifier = Modifier
-                        .padding(5.dp))
+                        .padding(5.dp)
+                )
                 IconButton(
                     modifier = Modifier
                         .align(Alignment.End)
@@ -54,15 +57,17 @@ fun ArtView(viewModel: ArtVM = viewModel()) {
                     onClick = { viewModel.clearSelection() }) {
                     Text(
                         modifier = Modifier
-                            .padding(5.dp,0.dp),
+                            .padding(5.dp, 0.dp),
                         text = "X"
                     )
                 }
                 Column(modifier = Modifier.padding(40.dp, 15.dp)) {
                     Text(item.description)
-                    HorizontalDivider(modifier = Modifier
-                        .padding(5.dp),
-                        thickness = 2.dp)
+                    HorizontalDivider(
+                        modifier = Modifier
+                            .padding(5.dp),
+                        thickness = 2.dp
+                    )
                     Text(item.creationYear.toString())
                 }
             }

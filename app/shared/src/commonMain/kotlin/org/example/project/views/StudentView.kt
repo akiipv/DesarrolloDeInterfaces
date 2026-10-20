@@ -55,8 +55,10 @@ fun StudentView(viewModel: StudentVM) {
                     .padding(20.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = "Añadir alumno",
-                    fontWeight = FontWeight.Bold)
+                Text(
+                    text = "Añadir alumno",
+                    fontWeight = FontWeight.Bold
+                )
                 Spacer(modifier = Modifier.height(5.dp))
                 OutlinedTextField(
                     state = inputName,
@@ -77,10 +79,12 @@ fun StudentView(viewModel: StudentVM) {
                 )
                 Spacer(modifier = Modifier.height(10.dp))
                 Button(
-                    onClick = { viewModel.addStudent(
-                        inputName.text.toString(),
-                        inputPractice.text.toString().toDoubleOrNull(),
-                        inputTheory.text.toString().toDoubleOrNull())
+                    onClick = {
+                        viewModel.addStudent(
+                            inputName.text.toString(),
+                            inputPractice.text.toString().toDoubleOrNull(),
+                            inputTheory.text.toString().toDoubleOrNull()
+                        )
                     },
                 ) { Text("Guardar") }
             }
@@ -109,9 +113,11 @@ fun cardStudents(Student: StudentData) {
             modifier = Modifier
                 .padding(15.dp)
         ) {
-            Text(text = Student.name.replaceFirstChar { it.uppercase() },
+            Text(
+                text = Student.name.replaceFirstChar { it.uppercase() },
                 fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center)
+                textAlign = TextAlign.Center
+            )
             HorizontalDivider(
                 modifier = Modifier.width(55.dp),
                 color = Color.Black,
@@ -122,7 +128,8 @@ fun cardStudents(Student: StudentData) {
             Text(text = "Nota práctica: ${Student.practice}")
             Text(text = "Media: ${Student.average()}")
             Spacer(modifier = Modifier.height(5.dp))
-            Badge(containerColor = if (Student.doTheyPass()) Color.Green else Color.Red,
+            Badge(
+                containerColor = if (Student.doTheyPass()) Color.Green else Color.Red,
                 modifier = Modifier.padding(8.dp)
             )
             { Text(text = if (Student.doTheyPass()) "Ha superado la asignatura" else "No ha superado la asignatura") }

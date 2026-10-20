@@ -19,15 +19,18 @@ import org.example.project.models.EstateData
 fun EstateView(viewModel: EstateVM) {
     val (items) = viewModel.uiState.collectAsState().value
 
-    Column(modifier = Modifier
-        .fillMaxSize()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
     ) {
         LazyRow(
             contentPadding = PaddingValues(15.dp)
         ) {
-            items(items) { item -> EstateCard(item, onclick = {
-                viewModel.modifyWaterNeed(item.id)
-            }) }
+            items(items) { item ->
+                EstateCard(item, onclick = {
+                    viewModel.modifyWaterNeed(item.id)
+                })
+            }
 
         }
 
@@ -39,10 +42,12 @@ fun EstateView(viewModel: EstateVM) {
                 modifier = Modifier
                     .padding(12.dp)
             ) {
-                Text(text = "Resumen",
+                Text(
+                    text = "Resumen",
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth())
+                    modifier = Modifier.fillMaxWidth()
+                )
                 HorizontalDivider(
                     modifier = Modifier.fillMaxWidth(),
                     thickness = 2.dp,
@@ -93,10 +98,14 @@ fun EstateCard(item: EstateData, onclick: () -> Unit) {
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(10.dp)
                 )
-                Button(onClick = onclick, modifier = Modifier
-                    .size(100.dp, 30.dp)) {
-                    Text(text = "Cambiar",
-                        fontSize = 12.sp)
+                Button(
+                    onClick = onclick, modifier = Modifier
+                        .size(100.dp, 30.dp)
+                ) {
+                    Text(
+                        text = "Cambiar",
+                        fontSize = 12.sp
+                    )
                 }
             }
         }

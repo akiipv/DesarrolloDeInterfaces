@@ -6,7 +6,5 @@ data class RecipeData (
     val minutes: Int,
     val favorite: Boolean
 ) {
-    fun isFast(): Boolean {
-        return (minutes <= 20)
-    }
+    fun isFast(): Boolean = minutes <= 20
 }

@@ -19,8 +19,14 @@ fun UserHealthView(viewModel: UserHealthVM) {
         Text(text = "Peso: ${userHealth?.peso}", style = MaterialTheme.typography.titleMedium)
         Text(text = "Altura: ${userHealth?.altura}", style = MaterialTheme.typography.titleMedium)
         Text(text = "Pasos dados: ${userHealth?.nPasos}", style = MaterialTheme.typography.titleMedium)
-        Text(text = "Objetivo cumplido: ${userHealth?.objetivo(userHealth.nPasos)}", style = MaterialTheme.typography.titleMediumEmphasized)
-        Text(text = "IMC: ${userHealth?.calcIMC(userHealth.peso, userHealth.altura)}", style = MaterialTheme.typography.titleMedium)
+        Text(
+            text = "Objetivo cumplido: ${userHealth?.objetivo(userHealth.nPasos)}",
+            style = MaterialTheme.typography.titleMediumEmphasized
+        )
+        Text(
+            text = "IMC: ${userHealth?.calcIMC(userHealth.peso, userHealth.altura)}",
+            style = MaterialTheme.typography.titleMedium
+        )
 
         Button(onClick = {
             viewModel.sumarPasos(1000)

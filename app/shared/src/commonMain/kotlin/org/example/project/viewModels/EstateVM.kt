@@ -29,11 +29,13 @@ class EstateVM : ViewModel() {
     }
 
     fun modifyWaterNeed(id: Int) {
-        _uiState.update { currentState -> currentState.copy(
-            items = currentState.items.map { item ->
-                if (item.id == id) item.copy(needsWater = !item.needsWater)
-                else item
-            }
-        )}
+        _uiState.update { currentState ->
+            currentState.copy(
+                items = currentState.items.map { item ->
+                    if (item.id == id) item.copy(needsWater = !item.needsWater)
+                    else item
+                }
+            )
+        }
     }
 }

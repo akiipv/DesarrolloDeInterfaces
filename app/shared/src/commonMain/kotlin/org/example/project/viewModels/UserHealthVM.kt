@@ -4,10 +4,6 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
-import org.example.project.models.BasicModel
-import org.example.project.states.BaseUiState
-import org.example.project.models.UserHealth
 import org.example.project.states.UserHealthState
 
 class UserHealthVM : ViewModel() {

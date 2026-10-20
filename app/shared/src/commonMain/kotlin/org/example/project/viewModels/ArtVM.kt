@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import org.example.project.models.ArtData
-import org.example.project.models.BasicModel
 import org.example.project.states.ArtState
 
 class ArtVM : ViewModel() {

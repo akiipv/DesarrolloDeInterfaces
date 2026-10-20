@@ -31,11 +31,9 @@ class StudentVM : ViewModel() {
     fun addStudent(name: String?, practice: Double?, theory: Double?) {
         if (!name.isNullOrEmpty() || practice != null || theory != null) {
             val student = StudentData(name!!, theory!!, practice!!)
-            _uiState.update {
-                    currentState -> currentState.copy(items = currentState.items.plus(student).sortedBy { item -> item.name })
+            _uiState.update { currentState ->
+                currentState.copy(items = currentState.items.plus(student).sortedBy { item -> item.name })
             }
         }
-
-
     }
 }

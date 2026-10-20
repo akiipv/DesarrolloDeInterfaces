@@ -57,7 +57,7 @@ fun MovieView(viewModel: MovieVM) {
             .padding(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Row (
+        Row(
 
         ) {
             OutlinedTextField(
@@ -101,11 +101,12 @@ fun MovieView(viewModel: MovieVM) {
         }
 
         Spacer(modifier = Modifier.height(20.dp))
-        LazyRow(modifier = Modifier
-            .weight(1f)
+        LazyRow(
+            modifier = Modifier
+                .weight(1f)
         ) {
-            items(items.filter { it.title.contains(title, true) && it.genre.contains(selectedOption, true) }) {
-                item -> movieCard(item)
+            items(items.filter { it.title.contains(title, true) && it.genre.contains(selectedOption, true) }) { item ->
+                movieCard(item)
             }
         }
     }
@@ -113,12 +114,12 @@ fun MovieView(viewModel: MovieVM) {
 
 @Composable
 fun movieCard(item: MovieData) {
-    Card (
+    Card(
         modifier = Modifier
             .padding(8.dp)
             .widthIn(200.dp)
     ) {
-        Column (
+        Column(
             modifier = Modifier
                 .padding(8.dp)
         ) {

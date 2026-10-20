@@ -44,7 +44,7 @@ import org.example.project.viewModels.RecipeVM
 fun RecipeView(viewModel: RecipeVM) {
     val (items) = viewModel.uiState.collectAsState().value
 
-    Column (
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(15.dp),
@@ -55,8 +55,10 @@ fun RecipeView(viewModel: RecipeVM) {
             pero en mi mente that was epic
         */
         var yes by remember { mutableStateOf(false) }
-        Button(onClick = { yes = !yes },
-            colors = ButtonDefaults.buttonColors(Color.Black)) {
+        Button(
+            onClick = { yes = !yes },
+            colors = ButtonDefaults.buttonColors(Color.Black)
+        ) {
             Text("See my favorites")
         }
         LazyRow {
@@ -71,17 +73,25 @@ fun RecipeView(viewModel: RecipeVM) {
 fun recipeCard(item: RecipeData, onClick: () -> Unit) {
     Card(
         modifier = Modifier
-        .widthIn(150.dp)
-        .padding(15.dp),
-        colors = CardDefaults.cardColors(if (item.favorite) Color.Yellow.copy(red = 1f, green = 0.92f, blue = 0.6f) else Color.Unspecified)
+            .widthIn(150.dp)
+            .padding(15.dp),
+        colors = CardDefaults.cardColors(
+            if (item.favorite) Color.Yellow.copy(
+                red = 1f,
+                green = 0.92f,
+                blue = 0.6f
+            ) else Color.Unspecified
+        )
     ) {
         Column(
             modifier = Modifier
                 .padding(15.dp)
         ) {
             Row {
-                Text(text = item.name,
-                    fontWeight = FontWeight.Bold)
+                Text(
+                    text = item.name,
+                    fontWeight = FontWeight.Bold
+                )
                 Spacer(modifier = Modifier.width(10.dp))
                 if (item.favorite) Text("⭐")
                 if (item.isFast()) Text(
@@ -99,7 +109,7 @@ fun recipeCard(item: RecipeData, onClick: () -> Unit) {
             Text("· Time needed﹕ ${item.minutes} minutes")
             Spacer(modifier = Modifier.height(15.dp))
             Row {
-                Button (
+                Button(
                     onClick = onClick,
                     colors = ButtonDefaults.buttonColors(if (item.favorite) Color(0xFFF2C233) else Color.Unspecified)
                 ) {

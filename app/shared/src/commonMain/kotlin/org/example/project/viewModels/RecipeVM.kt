@@ -29,11 +29,13 @@ class RecipeVM : ViewModel() {
     }
 
     fun modifyFavorite(name: String) {
-        _uiState.update { currentState -> currentState.copy(
-            recipies = currentState.recipies.map { item ->
-                if (item.name == name) item.copy(favorite = !item.favorite)
-                else item
-            }
-        )}
+        _uiState.update { currentState ->
+            currentState.copy(
+                recipies = currentState.recipies.map { item ->
+                    if (item.name == name) item.copy(favorite = !item.favorite)
+                    else item
+                }
+            )
+        }
     }
 }
