@@ -33,8 +33,8 @@ fun App() {
         val viewModel: MovieVM = viewModel() { MovieVM() }
         MovieView(viewModel = viewModel) */
 
-        // Proyecto 5
+        /* Proyecto 5
         val viewModel: RecipeVM = viewModel() { RecipeVM() }
-        RecipeView(viewModel = viewModel)
+        RecipeView(viewModel = viewModel) */
     }
 }
