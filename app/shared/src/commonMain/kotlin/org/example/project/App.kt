@@ -4,8 +4,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.example.project.models.*
-import org.example.project.viewModels.*
-import org.example.project.views.*
+import org.example.project.presentation.viewModels.*
+import org.example.project.presentation.views.*
 
 @Composable
 fun App() {
@@ -33,8 +33,8 @@ fun App() {
         val viewModel: MovieVM = viewModel() { MovieVM() }
         MovieView(viewModel = viewModel) */
 
-        /* Proyecto 5
+        // Proyecto 5
         val viewModel: RecipeVM = viewModel() { RecipeVM() }
-        RecipeView(viewModel = viewModel) */
+        RecipeView(viewModel = viewModel)
     }
 }
